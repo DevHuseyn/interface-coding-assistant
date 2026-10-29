@@ -114,7 +114,7 @@ const props = [
 function Profile() {
   const pts = Array.from({ length: 900 }, (_, i) => {
     const x = (i * 7.31) % 560;
-    const b = [[50, 80, 120], [230, 280, 160], [330, 360, 175], [420, 450, 140]].find(([a, e]) => x > a && x < e);
+    const b = ([[50, 80, 120], [230, 280, 160], [330, 360, 175], [420, 450, 140]] as [number, number, number][]).find(([a, e]) => x > a && x < e);
     const base = 20 + Math.sin(x / 30) * 8 + ((i * 13) % 17);
     const y = b ? ((i * 37) % b[2]) : base + ((i * 7) % 25);
     return { x, y };
